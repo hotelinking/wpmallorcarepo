@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    links:
+      - database:mariadb
+    environment:
+      - WORDPRESS_DB_USER=wpmallorcaUser
+      - WORDPRESS_DB_NAME=wpmallorca
+      - WORDPRESS_TABLE_PREFIX=wp_
+      - WORDPRESS_DB_PASSWORD=secret
+      - WORDPRESS_DB_HOST=mariadb
+      - MYSQL_PORT_3306_TCP=3306
+    restart: unless-stopped
+    ports:
+      - "test.dev:80:80"
+    working_dir: /var/www/html
+    volumes:
+     - ./:/var/www/html/
+  database:
+   image: mariadb:latest
+   environment:
+     - MYSQL_ROOT_PASSWORD=secret
+     - MYSQL_DATABASE=wpmallorca
+     - MYSQL_USER=wpmallorcaUser
+     - MYSQL_PASSWORD=secret
+   restart: unless-stopped
+   ports:
+     - "3306:3306"
