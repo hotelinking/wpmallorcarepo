@@ -92,6 +92,7 @@ wp-content/*
 
 # ignore these plugins
 wp-content/plugins/hello.php
+wp-content/akismet/
 
 # ignore specific themes
 wp-content/themes/twenty*/
