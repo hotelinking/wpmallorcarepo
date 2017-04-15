@@ -1,0 +1,21 @@
+{
+  "name": "wp-mallorca",
+  "version": "1.0.0",
+  "description": "wordpress theme for wordpress mallorca meetup",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress",
+    "mallorca"
+  ],
+  "author": "Xisco Lladó",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-imagemin": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "pump": "^1.0.2"
+  }
+}
