@@ -40,7 +40,7 @@ var filesToMove = [
 './style.css',
 ];
 
-gulp.task('dist', function(){
+gulp.task('dist',['sass','js','img'], function(){
   // the base option sets the relative root for the set of files,
   // preserving the folder structure
   gulp.src(filesToMove, { base: './' })
